@@ -58,11 +58,11 @@
                 @if (auth()->user()->hasRole('siswa'))
                   {{-- data karir --}}
                   <li class="list-group w-100 list text-medium cursor-pointer text-md-start">
-                      <a href="" class="a-icon py-2 px-3"><i class="fa-solid fa-briefcase me-3"></i>Data Karir</a>
+                      <a href="{{ route('prestasi') }}" class="a-icon py-2 px-3"><i class="fa-solid fa-trophy me-3"></i>Prestasi</a>
                   </li>
                   {{-- data nilai  --}}
                   <li class="list-group w-100 list text-medium cursor-pointer text-md-start">
-                      <a href="" class="a-icon py-2 px-3"><i class="fa-solid fa-chart-column me-3"></i>Data Nilai</a>
+                      <a href="{{ route('sp') }}" class="a-icon py-2 px-3"><i class="fa-solid fa-file-circle-exclamation me-3"></i>Surat Peringatan (SP)</a>
                   </li>
                 @endif
                 {{-- logout --}}

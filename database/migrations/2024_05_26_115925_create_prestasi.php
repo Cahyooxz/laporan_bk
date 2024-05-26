@@ -17,7 +17,7 @@ return new class extends Migration
             ->constrained('users')
             ->cascadeOnDelete()
             ->cascadeOnUpdate();
-            $table->string('peringkat');
+            $table->enum('peringkat',['Juara 1','Juara 2','Juara 3']);
             $table->string('nama_kompetisi');
             $table->timestamps();
         });

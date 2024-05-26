@@ -24,7 +24,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.users_create');
+        return view('users.users_create',[
+            'title' => 'Tambah Data Users'
+
+        ]);
     }
 
     /**
@@ -36,7 +39,7 @@ class UserController extends Controller
             'role' => 'required',
             'nisn_or_nip' => 'required|unique:users,nisn_or_nip',
             'name' => 'required|min:1',
-            'email' => 'required|min:1',
+            'email' => 'required|min:1|unique:users,email',
             'password' => 'required|min:6',
         ],[
             'role.required' => 'Role wajib diisi',
@@ -46,6 +49,7 @@ class UserController extends Controller
             'name.min' => 'Nama minimal berisi :min character',
             'email.required' => 'Email wajib diisi',
             'email.min' => 'Email minimal berisi :min',
+            'email.unique' => 'Email sudah ada',
             'password.required' => 'Password wajib diisi',
             'password.min' => 'Password minimal berisi :min character',
         ]);
@@ -66,7 +70,7 @@ class UserController extends Controller
             }elseif($data['role'] === 'siswa'){
                 $users->assignRole('siswa');
             }
-            return redirect()->route('users.index')->with('success', 'Data Users berhasil dibuat!');
+            return redirect()->route('users.index')->with('success', 'Data Users '.$data['name'].' berhasil dibuat');
         }
     }
 
@@ -93,16 +97,52 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $this->validate($request,[
+            'role' => 'required',
+            'nisn_or_nip' => 'required|unique:users,nisn_or_nip,'.$user->id,
+            'name' => 'required|min:1',
+            'email' => 'required|min:1|unique:users,email,'.$user->id,
+        ],[
+            'role.required' => 'Role wajib diisi',
+            'nisn_or_nip.required' => 'NISN OR NIP wajib diisi',
+            'nisn_or_nip.unique' => 'NISN OR NIP sudah ada',
+            'name.required' => 'Nama wajib diisi',
+            'name.min' => 'Nama minimal berisi :min character',
+            'email.required' => 'Email wajib diisi',
+            'email.min' => 'Email minimal berisi :min',
+            'email.unique' => 'Email sudah ada',
+        ]);
+
+        $user->update([
+            'role' => $request->role,
+            'nisn_or_nip' => $request->nisn_or_nip,
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+
+        if($user->update()){
+            if($user->role === 'admin'){
+                $user->syncRoles('admin');
+            }elseif($user->role === 'guru'){
+                $user->syncRoles('guru');
+            }elseif($user->role === 'siswa'){
+                $user->syncRoles('siswa');
+            }
+            return redirect()->route('users.index')->with('success','Data Users '.$user->name.' berhasil diedit!');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'Data Users '.$user->name.' berhasil dihapus');
     }
 }

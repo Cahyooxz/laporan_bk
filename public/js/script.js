@@ -1,47 +1,16 @@
 // datatables
-new DataTable('#dataStatus', {
+new DataTable('#table-sp', {
     language: {
-        "search": "Cari :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img src='../img/404.png' alt='' class='notfound'><p class='fw-semibold mt-5 mb-0'>Data Siswa Tidak Ditemukan</p></div>"
+        "search": "Cari Data Surat Peringatan :",
+        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Surat Peringatan Tidak Ditemukan</p></div>"
     }
 });
-new DataTable('#dataMapel', {
+new DataTable('#table-prestasi', {
     language: {
-        "search": "Cari Mata Pelajaran :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img src='img/404.png' alt='' class='notfound'><p class='fw-semibold mt-5 mb-0'>Data Mata Pelajaran Tidak Ditemukan</p></div>"
+        "search": "Cari Data Prestasi :",
+        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Prestasi Tidak Ditemukan</p></div>"
     }
 });
-new DataTable('#dataKelas',{
-    language: {
-        "search": "Cari Kelas :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Kelas Tidak Ditemukan</p></div>"
-    }
-});
-new DataTable('#dataSiswa', {
-    language: {
-        "search": "Cari Data Siswa :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Siswa Tidak Ditemukan</p></div>"
-    }
-});
-new DataTable('#dataguru', {
-    language: {
-        "search": "Cari Data Guru :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' class='notfound' src='img/404_guru.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Guru Tidak Ditemukan</p></div>"
-    }
-});
-new DataTable('#dataAdmin', {
-    language: {
-        "search": "Cari Data Admin :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Admin Tidak Ditemukan</p></div>"
-    }
-});
-new DataTable('#dataUser', {
-    language: {
-        "search": "Cari Data Users :",
-        "zeroRecords": "<div class='alert-alert-warning d-flex flex-column text-center d-flex justify-content-center align-items-center' style='height: 80vh'><img class='notfound' src='img/404.png' alt=''><p class='fw-semibold mt-5 mb-0'>Data Users Tidak Ditemukan</p></div>"
-    }
-});
-new DataTable('#dataNilai');
 
 // // new DataTable('#dataSiswa');
 // $(document).ready( function () {
