@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $admin  = User::create([
-            'nisn/nip' => '1',
+            'nisn_or_nip' => '1',
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $guru  = User::create([
-            'nisn/nip' => '2',
+            'nisn_or_nip' => '2',
             'name' => 'guru',
             'email' => 'guru@gmail.com',
             'password' => bcrypt('guru'),
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
         $guru->assignRole('guru');
 
         $siswa  = User::create([
-            'nisn/nip' => '3',
+            'nisn_or_nip' => '3',
             'name' => 'siswa',
             'email' => 'siswa@gmail.com',
             'password' => bcrypt('siswa'),
