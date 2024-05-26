@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nisn/nip',
+        'nisn_or_nip',
         'name',
         'email',
         'password',

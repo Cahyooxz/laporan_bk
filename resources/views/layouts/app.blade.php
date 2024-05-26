@@ -44,6 +44,7 @@
 <body>
     <div class="container-fluid mb-5">
         <div class="row">
+            @include('partials.notification')
             @include('partials.sidebar')
             @include('partials.navbar')
             <div class="col-2 d-none d-md-block">
