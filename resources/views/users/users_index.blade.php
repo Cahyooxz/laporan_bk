@@ -6,7 +6,9 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <a href="{{ route('users.create') }}" class="btn btn-success">Tambah Users</a>
+              <div class="d-flex">
+                <a href="{{ route('users.create') }}" class="btn btn-success ms-auto"><i class="fa-solid fa-circle-plus me-3"></i>Tambah Users</a>
+              </div>
               <table class="table" id="table-users">
                 <thead>
                   <th>NISN/NIP</th>
