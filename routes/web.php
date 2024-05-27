@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SuratPeringatanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +36,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/data-admin', [AdminController::class, 'data_admin'])->name('users.admin');
+    Route::get('/data-guru', [GuruController::class, 'data_guru'])->name('users.guru');
+    Route::get('/data-siswa', [SiswaController::class, 'data_siswa'])->name('users.siswa');
+    Route::get('/admin', [AdminController::class, 'data_admin'])->name('users.admin');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users/create/store', [UserController::class, 'store'])->name('users.store');
     Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
@@ -50,6 +58,21 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/surat-peringatanmu', [SuratPeringatanController::class, 'surat'])->name('sp');
+    Route::get('/surat-peringatan', [SuratPeringatanController::class, 'index'])->name('sp.index');
+    Route::get('/surat-peringatan/create', [SuratPeringatanController::class, 'create'])->name('sp.create');
+    Route::post('/surat-peringatan/create/add', [SuratPeringatanController::class, 'store'])->name('sp.store');
+    Route::get('/surat-peringatan/edit/{id}', [SuratPeringatanController::class, 'edit'])->name('sp.edit');
+    Route::put('/surat-peringatan/edit/{id}/update', [SuratPeringatanController::class, 'update'])->name('sp.update');
+    Route::delete('/surat-peringatan/destroy/{id}', [SuratPeringatanController::class, 'destroy'])->name('sp.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/data-jurusan', [JurusanController::class, 'jurusan'])->name('jurusan');
+    Route::get('/data-jurusan/create', [JurusanController::class, 'create'])->name('jurusan.create');
+    Route::get('/data-jurusan/edit/{id}', [JurusanController::class, 'edit'])->name('jurusan.edit');
+    Route::post('/data-jurusan/store', [JurusanController::class, 'store'])->name('jurusan.store');
+    Route::put('/data-jurusan/update/{id}', [JurusanController::class, 'update'])->name('jurusan.update');
+    Route::delete('/data-jurusan/destory/{id}', [JurusanController::class, 'destroy'])->name('jurusan.destroy');
     Route::get('/surat-peringatan', [SuratPeringatanController::class, 'index'])->name('sp.index');
     Route::get('/surat-peringatan/create', [SuratPeringatanController::class, 'create'])->name('sp.create');
     Route::post('/surat-peringatan/create/add', [SuratPeringatanController::class, 'store'])->name('sp.store');

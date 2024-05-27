@@ -15,19 +15,19 @@
 
         @if (auth()->user()->hasRole('admin'))
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
+            <a href="{{ route('jurusan')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Users' || $title === 'Tambah Data Users' || $title === 'Edit Data Users' ? 'list-active' : ''}}">
             <a href="{{ route('users.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-users me-3"></i>Users</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user-gear me-3"></i>Admin</a>
+            <a href="{{ route('users.admin')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user-gear me-3"></i>Admin</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-chalkboard-user me-3"></i>Guru</a>
+            <a href="{{ route('users.guru')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-chalkboard-user me-3"></i>Guru</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-graduation-cap me-3"></i>Siswa</a>
+            <a href="{{ route('users.siswa')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-graduation-cap me-3"></i>Siswa</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start  {{ $title === 'Prestasi Siswa' || $title === 'Tambah Rimayat Prestasi Siswa' || $title === 'Edit Prestasi Siswa' ? 'list-active' : ''}}">
             <a href="{{ route('prestasi.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-trophy me-3" {{ $title === 'Dashboard' ? 'list-active' : ''}}></i>Prestasi</a>
@@ -38,7 +38,7 @@
         @endif
         @if (auth()->user()->hasRole('guru'))
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
+            <a href="{{ route('jurusan')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start">
             <a href="{{ route('prestasi.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-trophy me-3"></i>Prestasi</a>
