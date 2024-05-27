@@ -40,7 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-@vite(['css/style.css', 'js/script.js'])
+{{-- @vite(['css/style.css', 'js/script.js']) --}}
 <body>
     <div class="container-fluid mb-5">
         <div class="row">
