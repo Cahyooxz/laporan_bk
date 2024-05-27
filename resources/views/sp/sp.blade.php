@@ -9,8 +9,6 @@
         <div class="col-12 col-md-6">
           <h4 class="text-primary-emphasis fw-bold mt-5 mb-5">Catatan Surat Peringatanmu</h4>
           @foreach ($sp as $d)
-            
-          @endforeach
           @if($d->surat_peringatan === 'SP1')
             <div class="card mb-3 alert alert-warning">
               <div class="card-body p-0">
@@ -39,6 +37,7 @@
               </div>
             </div>
           @endif
+          @endforeach
         </div>
       </div>
     </div>
