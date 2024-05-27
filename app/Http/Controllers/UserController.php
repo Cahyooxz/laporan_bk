@@ -61,12 +61,12 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-
+        
         if($users = User::create($data)){
             if($data['role'] === 'admin'){
                 $users->assignRole('admin');
             }elseif($data['role'] === 'guru'){
-                $users->assignRole('admin');
+                $users->assignRole('guru');
             }elseif($data['role'] === 'siswa'){
                 $users->assignRole('siswa');
             }
