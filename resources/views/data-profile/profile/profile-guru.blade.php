@@ -17,8 +17,8 @@
                                       <div class="d-flex justify-content-end position-absolute" style="left: 65%;bottom:5%;">
                                       </div>
                                   </div>
-                              <p class="fw-bold m-0 mb-2 text-center mt-5">Susi</p>
-                              <p class="text-center">susi12@gmail.com</p>
+                              <p class="fw-bold m-0 mb-2 text-center mt-5">{{$guru->name}}</p>
+                              <p class="text-center">{{$guru->email}}</p>
                           </div>
                       </div>
                   </div>
@@ -33,25 +33,19 @@
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-id-card me-2"></i>NIP</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">301930193019</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$guru->data_guru->nip}}</p>
                                       </div>
                                       {{-- Nama --}}
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-user-tag me-2"></i>Nama Lengkap</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Susi</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$guru->name}}</p>
                                       </div>
                                       {{-- Email --}}
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-envelope me-2"></i>Email</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">susi12@gmail.com</p>
-                                      </div>
-                                      {{-- jk --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Laki-Laki</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$guru->email}}</p>
                                       </div>
                                   </div>
                                   <div class="col-12 col-md-6">
@@ -61,16 +55,16 @@
                                                   class="fa-solid fa-school me-2"></i>Kelas</label>
                                           <p class=" mb-3 mt-2 p-2 w-100">XI</p>
                                       </div>
-                                      {{-- Jurusan --}}
+                                      {{-- jk --}}
                                       <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-school-flag me-2"></i>Jurusan</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">RPL</p>
-                                      </div>
+                                        <label for="nama" class="fw-semibold"><i
+                                                class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
+                                        <p class=" mb-3 mt-2 p-2 w-100">{{$guru->data_guru->jk}}</p>
+                                    </div>
                                       <div class="form-group mb-4">
                                           <label for="urutan_kelas" class="fw-semibold"><i
-                                                  class="fa-solid fa-list-ol me-2"></i>Sebagai bagian</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Walikelas</p>
+                                                  class="fa-solid fa-list-ol me-2"></i>Bagian</label>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$guru->data_guru->bagian}}</p>
                                       </div>
                                   </div>
                               </div>

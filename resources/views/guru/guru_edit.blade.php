@@ -13,19 +13,22 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <label for="" class="fw-medium mb-2 mt-2">NIP</label>
-                                <input type="text" name="nip" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="nip" class="form-control mb-3" placeholder="NIP"
                                     value="{{ $guru->nisn_or_nip }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Nama Lengkap</label>
                                 <input type="text" name="name" class="form-control mb-3" placeholder="Nama Lengkap"
                                     value="{{ $guru->name }}">
+                                <label for="" class="fw-medium mb-2 mt-2">Jenis Kelamin</label>
+                                <input type="text" name="jk" class="form-control mb-3" placeholder="Jenis Kelamin"
+                                    value="{{ $guru->data_guru->jk }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Email</label>
-                                <input type="text" name="email" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="email" class="form-control mb-3" placeholder="Email"
                                     value="{{ $guru->email }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Kelas</label>
-                                <input type="text" name="kelas" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="kelas" class="form-control mb-3" placeholder="Kelas"
                                     value="{{ $guru->data_guru->kelas }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Bagian</label>
-                                <input type="text" name="absen" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="bagian" class="form-control mb-3" placeholder="Bagian"
                                     value="{{ $guru->data_guru->bagian }}">
                             </div>
                             <div class="col-12 mt-5">

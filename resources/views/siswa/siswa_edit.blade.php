@@ -13,19 +13,22 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <label for="" class="fw-medium mb-2 mt-2">NISN</label>
-                                <input type="text" name="nisn" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="nisn" class="form-control mb-3" placeholder="NISN"
                                     value="{{ $siswa->nisn_or_nip }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Nama Lengkap</label>
                                 <input type="text" name="name" class="form-control mb-3" placeholder="Nama Lengkap"
                                     value="{{ $siswa->name }}">
+                                <label for="" class="fw-medium mb-2 mt-2">Jenis Kelamin</label>
+                                <input type="text" name="jk" class="form-control mb-3" placeholder="Jenis Kelamin"
+                                    value="{{ $siswa->data_siswa->jk }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Kelas</label>
-                                <input type="text" name="kelas" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="kelas" class="form-control mb-3" placeholder="Kelas"
                                     value="{{ $siswa->data_siswa->kelas }}">
                                 <label for="" class="fw-medium mb-2 mt-2">No Absen</label>
-                                <input type="text" name="absen" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="absen" class="form-control mb-3" placeholder="No Absen"
                                     value="{{ $siswa->data_siswa->absen }}">
                                 <label for="" class="fw-medium mb-2 mt-2">Jurusan</label>
-                                <input type="text" name="jurusan" class="form-control mb-3" placeholder="Nama Lengkap"
+                                <input type="text" name="jurusan" class="form-control mb-3" placeholder="Jurusan"
                                     value="{{ $siswa->data_siswa->jurusan }}">  
                                 <label for="" class="fw-medium mb-2 mt-2">Email</label>
                                 <input type="email" name="email" class="form-control mb-3" placeholder="Email"

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nip')->unique();
             $table->foreign('nip')->references('nisn_or_nip')->on('users')->onDelete('cascade'); 
+            $table->string('jk');
             $table->string('kelas');
             $table->string('bagian');
             $table->timestamps();

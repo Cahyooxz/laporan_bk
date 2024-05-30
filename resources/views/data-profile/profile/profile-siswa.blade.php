@@ -17,8 +17,8 @@
                                       <div class="d-flex justify-content-end position-absolute" style="left: 65%;bottom:5%;">
                                       </div>
                                   </div>
-                              <p class="fw-bold m-0 mb-2 text-center mt-5">Mamank</p>
-                              <p class="text-center">mamank12@gmail.com</p>
+                              <p class="fw-bold m-0 mb-2 text-center mt-5">{{$siswa->name}}</p>
+                              <p class="text-center">{{$siswa->email}}</p>
                           </div>
                       </div>
                   </div>
@@ -33,31 +33,19 @@
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-id-card me-2"></i>NISN</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">301930193019</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->nisn_or_nip}}</p>
                                       </div>
                                       {{-- Nama --}}
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-user-tag me-2"></i>Nama Lengkap</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Mamank</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->name}}</p>
                                       </div>
                                       {{-- Email --}}
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-envelope me-2"></i>Email</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">mamank12@gmail.com</p>
-                                      </div>
-                                      {{-- Alamat --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-location-dot me-2"></i>Alamat</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Jl. Prabu Siliwangi</p>
-                                      </div>
-                                      {{-- jk --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Laki-Laki</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->email}}</p>
                                       </div>
                                   </div>
                                   <div class="col-12 col-md-6">
@@ -65,27 +53,22 @@
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-school me-2"></i>Kelas</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">XI</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->data_siswa->kelas}}</p>
                                       </div>
                                       {{-- Jurusan --}}
                                       <div class="form-group mb-4">
                                           <label for="nama" class="fw-semibold"><i
                                                   class="fa-solid fa-school-flag me-2"></i>Jurusan</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">RPL</p>
+                                          <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->data_siswa->jurusan}}</p>
                                       </div>
-                                      <div class="form-group mb-4">
-                                          <label for="urutan_kelas" class="fw-semibold"><i
-                                                  class="fa-solid fa-list-ol me-2"></i>Urutan Kelas</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">1</p>
-                                      </div>
+                                        {{-- jk --}}
+                                        <div class="form-group mb-4">
+                                            <label for="nama" class="fw-semibold"><i
+                                                    class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
+                                            <p class=" mb-3 mt-2 p-2 w-100">{{$siswa->data_siswa->jk}}</p>
+                                        </div>
                                       {{-- @if ($siswa->tahun_lulus) --}}
                                           {{-- Tahun lulus --}}
-                                          <div class="form-group mb-4">
-                                              <label for="nama" class="fw-semibold"><i
-                                                      class="fa-solid fa-calendar-days me-2"></i>Tahun
-                                                  Lulus</label>
-                                              <p class=" mb-3 mt-2 p-2 w-100">2023</p>
-                                          </div>
                                       {{-- @endif --}}
                                   </div>
                               </div>

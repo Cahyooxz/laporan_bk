@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataProfileController extends Controller
 {
@@ -17,14 +19,21 @@ class DataProfileController extends Controller
     }
     public function guru()
     {
+        $nip = Auth::user()->nisn_or_nip;
+        $guru = User::where('nisn_or_nip',$nip)->with('data_guru')->first();
+
         return view('data-profile.profile.profile-guru',[
             'title' => 'Data Profile Guru',
+            'guru'  => $guru,
         ]);
     }
     public function siswa()
     {
+        $nisn = Auth::user()->nisn_or_nip;
+        $siswa = User::where('nisn_or_nip',$nisn)->with('data_siswa')->first();
         return view('data-profile.profile.profile-siswa',[
             'title' => 'Data Profile Siswa',
+            'siswa' => $siswa
         ]);
     }
     /**

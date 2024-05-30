@@ -35,19 +35,21 @@ class SiswaController extends Controller
 
         $data = [
             'nisn_or_nip' => $request->nisn,
-            'name' => $request->name,
-            'email' => $request->email,
+            'name'        => $request->name,
+            'email'       => $request->email,
         ];
 
         $data2 = [
+            'jk'        => $request->jk,
             'kelas'     => $request->kelas,
             'jurusan'   => $request->jurusan,
             'absen'     => $request->absen,
         ];
+        
 
         
         User::where('id',$id)->update($data);
-        ProfileSiswa::where('id',$id)->update($data2);
+        ProfileSiswa::where('nisn',$request->nisn)->update($data2);
 
         return redirect()->route('users.siswa')->with('success', 'Data Siswa '.$data['name'].' berhasil diubah');;
     }

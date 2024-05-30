@@ -11,6 +11,7 @@
                 <thead>
                   <th>NISN</th>
                   <th>Nama Lengkap</th>
+                  <th>Jenis Kelamin</th>
                   <th>Email</th>
                   <th>Kelas</th>
                   <th>Absen</th>
@@ -22,6 +23,7 @@
                   <tr>
                     <td>{{ $d->nisn_or_nip }}</td>
                     <td>{{ $d->name }}</td>
+                    <td>{{ $d->data_siswa->jk }}</td>
                     <td>{{ $d->email }}</td>
                     <td>{{ $d->data_siswa->kelas }}</td>
                     <td>{{ $d->data_siswa->absen }}</td>

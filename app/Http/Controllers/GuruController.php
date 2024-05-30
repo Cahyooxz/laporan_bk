@@ -41,13 +41,15 @@ class GuruController extends Controller
         ];
 
         $data2 = [
+            'jk'        => $request->jk,
             'kelas'     => $request->kelas,
-            'bagian'   => $request->bagian,
+            'bagian'    => $request->bagian,
         ];
+        
 
         
         User::where('id',$id)->update($data);
-        ProfileGuru::where('id',$id)->update($data2);
+        ProfileGuru::where('nip',$request->nip)->update($data2);
 
         return redirect()->route('users.guru')->with('success', 'Data Guru '.$data['name'].' berhasil diubah');;
     }

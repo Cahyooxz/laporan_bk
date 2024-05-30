@@ -14,17 +14,17 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin  = User::create([
-            'nisn_or_nip' => '1',
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin'),
-            'role' => 'admin',
-        ]);
-        $admin->assignRole('admin');
+        // $admin  = User::create([
+        //     'nisn_or_nip' => '1',
+        //     'name' => 'admin',
+        //     'email' => 'admin@gmail.com',
+        //     'password' => bcrypt('admin'),
+        //     'role' => 'admin',
+        // ]);
+        // $admin->assignRole('admin');
 
         $guru  = User::create([
-            'nisn_or_nip' => '2',
+            'nisn_or_nip' => '4',
             'name' => 'guru',
             'email' => 'guru@gmail.com',
             'password' => bcrypt('guru'),
@@ -32,13 +32,13 @@ class UserSeeder extends Seeder
         ]);
         $guru->assignRole('guru');
 
-        $siswa  = User::create([
-            'nisn_or_nip' => '3',
-            'name' => 'siswa',
-            'email' => 'siswa@gmail.com',
-            'password' => bcrypt('siswa'),
-            'role' => 'siswa',
-        ]);
-        $siswa->assignRole('siswa');
+        // $siswa  = User::create([
+        //     'nisn_or_nip' => '3',
+        //     'name' => 'siswa',
+        //     'email' => 'siswa@gmail.com',
+        //     'password' => bcrypt('siswa'),
+        //     'role' => 'siswa',
+        // ]);
+        // $siswa->assignRole('siswa');
     }
 }

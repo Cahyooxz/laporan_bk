@@ -11,6 +11,7 @@
                 <thead>
                   <th>NIP</th>
                   <th>Nama Lengkap</th>
+                  <th>Jenis Kelamin</th>
                   <th>Email</th>
                   <th>Kelas</th>
                   <th>Bagian</th>
@@ -21,6 +22,7 @@
                   <tr>
                     <td>{{ $d->nisn_or_nip }}</td>
                     <td>{{ $d->name }}</td>
+                    <td>{{ $d->data_guru->jk }}</td>
                     <td>{{ $d->email }}</td>
                     <td>{{ $d->data_guru->kelas }}</td>
                     <td>{{ $d->data_guru->bagian }}</td>

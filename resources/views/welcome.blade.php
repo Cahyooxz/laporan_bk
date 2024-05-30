@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body>
+{{-- <body>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="container">
@@ -59,8 +59,8 @@
         </form>
     </div>
     </div>
-    {{-- bootstrap js --}}
+    bootstrap js
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-</body>
+</body> 
 
 </html>
