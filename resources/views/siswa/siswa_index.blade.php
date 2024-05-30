@@ -12,6 +12,9 @@
                   <th>NISN</th>
                   <th>Nama Lengkap</th>
                   <th>Email</th>
+                  <th>Kelas</th>
+                  <th>Absen</th>
+                  <th>Jurusan</th>
                   <th>Aksi</th>
                 </thead>
                 <tbody>
@@ -20,6 +23,9 @@
                     <td>{{ $d->nisn_or_nip }}</td>
                     <td>{{ $d->name }}</td>
                     <td>{{ $d->email }}</td>
+                    <td>{{ $d->data_siswa->kelas }}</td>
+                    <td>{{ $d->data_siswa->absen }}</td>
+                    <td>{{ $d->data_siswa->jurusan }}</td>
                     <td>
                       <div class="dropdown">
                           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -28,7 +34,7 @@
                           </button>
                           <ul class="dropdown-menu">
                               <li><a class="dropdown-item"
-                                      href="{{ route('users.edit', ['id' => $d->id]) }}"><i
+                                      href="{{ route('siswa.edit', ['id' => $d->id]) }}"><i
                                           class="bi bi-pen me-2"></i>Edit</a></li>
                               <li>
                                   <form id="hapus-users-{{ $d->id }}" action="{{ route('users.destroy', ['id' => $d->id]) }}" method="POST" class="form-delete">

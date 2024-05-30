@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfileGuru;
+use App\Models\ProfileSiswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -34,45 +36,49 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $this->validate($request,[
-            'role' => 'required',
-            'nisn_or_nip' => 'required|unique:users,nisn_or_nip',
-            'name' => 'required|min:1',
-            'email' => 'required|min:1|unique:users,email',
-            'password' => 'required|min:6',
-        ],[
-            'role.required' => 'Role wajib diisi',
-            'nisn_or_nip.required' => 'NISN OR NIP wajib diisi',
-            'nisn_or_nip.unique' => 'NISN OR NIP sudah ada',
-            'name.required' => 'Nama wajib diisi',
-            'name.min' => 'Nama minimal berisi :min character',
-            'email.required' => 'Email wajib diisi',
-            'email.min' => 'Email minimal berisi :min',
-            'email.unique' => 'Email sudah ada',
-            'password.required' => 'Password wajib diisi',
-            'password.min' => 'Password minimal berisi :min character',
-        ]);
+{
+    $this->validate($request, [
+        'role' => 'required',
+        'nisn_or_nip' => 'required|unique:users,nisn_or_nip',
+        'name' => 'required|min:1',
+        'email' => 'required|min:1|unique:users,email',
+        'password' => 'required|min:6',
+    ], [
+        'role.required' => 'Role wajib diisi',
+        'nisn_or_nip.required' => 'NISN OR NIP wajib diisi',
+        'nisn_or_nip.unique' => 'NISN OR NIP sudah ada',
+        'name.required' => 'Nama wajib diisi',
+        'name.min' => 'Nama minimal berisi :min karakter',
+        'email.required' => 'Email wajib diisi',
+        'email.min' => 'Email minimal berisi :min',
+        'email.unique' => 'Email sudah ada',
+        'password.required' => 'Password wajib diisi',
+        'password.min' => 'Password minimal berisi :min karakter',
+    ]);
 
-        $data = [
-            'role' => $request->role,
-            'nisn_or_nip' => $request->nisn_or_nip,
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-        
-        if($users = User::create($data)){
-            if($data['role'] === 'admin'){
-                $users->assignRole('admin');
-            }elseif($data['role'] === 'guru'){
-                $users->assignRole('guru');
-            }elseif($data['role'] === 'siswa'){
-                $users->assignRole('siswa');
-            }
-            return redirect()->route('users.index')->with('success', 'Data Users '.$data['name'].' berhasil dibuat');
+    $data = [
+        'role' => $request->role,
+        'nisn_or_nip' => $request->nisn_or_nip,
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => bcrypt($request->password),
+    ];
+
+    if ($user = User::create($data)) {
+        if ($data['role'] === 'admin') {
+            $user->assignRole('admin');
+        } elseif ($data['role'] === 'guru') {
+            $user->assignRole('guru');
+            ProfileGuru::create(['nisn_or_nip' => $request->nisn_or_nip]);
+        } elseif ($data['role'] === 'siswa') {
+            $user->assignRole('siswa');
+            ProfileSiswa::create(['nisn' => $request->nisn_or_nip]);
         }
+
+        return redirect()->route('users.index')->with('success', 'Data Users '.$data['name'].' berhasil dibuat');
     }
+}
+
 
     /**
      * Display the specified resource.

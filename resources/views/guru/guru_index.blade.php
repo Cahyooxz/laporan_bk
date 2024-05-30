@@ -12,6 +12,8 @@
                   <th>NIP</th>
                   <th>Nama Lengkap</th>
                   <th>Email</th>
+                  <th>Kelas</th>
+                  <th>Bagian</th>
                   <th>Aksi</th>
                 </thead>
                 <tbody>
@@ -20,6 +22,8 @@
                     <td>{{ $d->nisn_or_nip }}</td>
                     <td>{{ $d->name }}</td>
                     <td>{{ $d->email }}</td>
+                    <td>{{ $d->data_guru->kelas }}</td>
+                    <td>{{ $d->data_guru->bagian }}</td>
                     <td>
                       <div class="dropdown">
                           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -28,10 +32,10 @@
                           </button>
                           <ul class="dropdown-menu">
                               <li><a class="dropdown-item"
-                                      href="{{ route('users.edit', ['id' => $d->id]) }}"><i
+                                      href="{{ route('guru.edit', ['id' => $d->id]) }}"><i
                                           class="bi bi-pen me-2"></i>Edit</a></li>
                               <li>
-                                  <form id="hapus-users-{{ $d->id }}" action="{{ route('users.destroy', ['id' => $d->id]) }}" method="POST" class="form-delete">
+                                  <form id="hapus-users-{{ $d->id }}" action="{{ route('guru.destroy', ['id' => $d->id]) }}" method="POST" class="form-delete">
                                       @csrf
                                       @method('DELETE')
                                       <button type="button" class="dropdown-item text-danger btn-delete" id="btnHapusUsers{{ $d->id }}"><i class="bi bi-trash3 me-2"></i>Delete</button>

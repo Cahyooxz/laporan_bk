@@ -35,6 +35,18 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/siswa/{id}', [SiswaController::class, 'edit'])->name('siswa.edit');
+    Route::put('/siswa/update/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+    Route::delete('/usiswa/delete/{id}', [SiswaController::class, 'destroy'])->name('usiswa.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/guru/{id}', [GuruController::class, 'edit'])->name('guru.edit');
+    Route::put('/guru/update/{id}', [GuruController::class, 'update'])->name('guru.update');
+    Route::delete('/guru/delete/{id}', [GuruController::class, 'destroy'])->name('guru.destroy');
+});
+
+Route::middleware('auth')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/data-admin', [AdminController::class, 'data_admin'])->name('users.admin');
     Route::get('/data-guru', [GuruController::class, 'data_guru'])->name('users.guru');

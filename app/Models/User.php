@@ -45,4 +45,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function data_siswa()
+    {
+        return $this->hasOne(ProfileSiswa::class, 'nisn', 'nisn_or_nip');
+    }
+    public function data_guru()
+    {
+        return $this->hasOne(ProfileGuru::class, 'nip', 'nisn_or_nip');
+    }
 }
