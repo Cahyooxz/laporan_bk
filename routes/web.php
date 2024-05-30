@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataProfileController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\PrestasiController;
@@ -94,7 +95,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/surat-peringatan', [SuratPeringatanController::class, 'index'])->name('sp.index');
+    Route::get('/profile/admin', [DataProfileController::class, 'admin'])->name('data.profile.admin');
+    Route::get('/profile/guru', [DataProfileController::class, 'guru'])->name('data.profile.guru');
+    Route::get('/profile/siswa', [DataProfileController::class, 'siswa'])->name('data.profile.siswa');
 });
 
 require __DIR__.'/auth.php';

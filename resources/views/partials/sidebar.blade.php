@@ -5,9 +5,21 @@
     </div>
     <ul class="p-0 d-flex flex-column d-flex gap-2 overflow-y-auto" style="height: 80vh">
         @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('guru') || auth()->user()->hasRole('siswa'))
-        {{-- <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile") ? 'list-active' : '' }} text-center text-md-start">
-            <a href="" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
-        </li> --}}
+            @if (auth()->user()->hasRole('admin'))
+                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Siswa") ? 'list-active' : '' }} text-center text-md-start">
+                    <a href="{{ route('data.profile.admin') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
+                </li>
+            @endif
+            @if (auth()->user()->hasRole('guru'))
+                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Siswa") ? 'list-active' : '' }} text-center text-md-start">
+                    <a href="{{ route('data.profile.guru') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
+                </li>
+            @endif
+            @if (auth()->user()->hasRole('siswa'))
+                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Siswa") ? 'list-active' : '' }} text-center text-md-start">
+                    <a href="{{ route('data.profile.siswa') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
+                </li>
+            @endif
         <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Dashboard' ? 'list-active' : ''}}">
             <a href="{{ route('dashboard') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-house-chimney-user me-3"></i>Dashboard</a>
         </li>
