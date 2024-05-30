@@ -6,12 +6,12 @@
     <ul class="p-0 d-flex flex-column d-flex gap-2 overflow-y-auto" style="height: 80vh">
         @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('guru') || auth()->user()->hasRole('siswa'))
             @if (auth()->user()->hasRole('admin'))
-                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Siswa") ? 'list-active' : '' }} text-center text-md-start">
+                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Admin") ? 'list-active' : '' }} text-center text-md-start">
                     <a href="{{ route('data.profile.admin') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
                 </li>
             @endif
             @if (auth()->user()->hasRole('guru'))
-                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Siswa") ? 'list-active' : '' }} text-center text-md-start">
+                <li class="list-group list text-medium cursor-pointer {{ ($title == "Data Profile Guru") ? 'list-active' : '' }} text-center text-md-start">
                     <a href="{{ route('data.profile.guru') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user me-3"></i>Profile</a>
                 </li>
             @endif
@@ -26,19 +26,19 @@
         @endif
 
         @if (auth()->user()->hasRole('admin'))
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Jurusan' ? 'list-active' : '' }}">
             <a href="{{ route('jurusan')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Users' || $title === 'Tambah Data Users' || $title === 'Edit Data Users' ? 'list-active' : ''}}">
             <a href="{{ route('users.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-users me-3"></i>Users</a>
         </li>
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start" {{ $title === 'Data Admin' ? 'list-active' : '' }}>
             <a href="{{ route('users.admin')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-user-gear me-3"></i>Admin</a>
         </li>
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Guru' ? 'list-active' : '' }}">
             <a href="{{ route('users.guru')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-chalkboard-user me-3"></i>Guru</a>
         </li>
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Siswa' ? 'list-active' : '' }}">
             <a href="{{ route('users.siswa')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-graduation-cap me-3"></i>Siswa</a>
         </li>
         <li class="list-group list text-medium cursor-pointer text-center text-md-start  {{ $title === 'Prestasi Siswa' || $title === 'Tambah Rimayat Prestasi Siswa' || $title === 'Edit Prestasi Siswa' ? 'list-active' : ''}}">
@@ -49,13 +49,13 @@
         </li>
         @endif
         @if (auth()->user()->hasRole('guru'))
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Data Jurusan' ? 'list-active' : '' }}">
             <a href="{{ route('jurusan')}}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-school-flag me-3"></i>Data Jurusan</a>
         </li>
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start {{ $title === 'Prestasi Siswa' ? 'list-active' : '' }}">
             <a href="{{ route('prestasi.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-trophy me-3"></i>Prestasi</a>
         </li>
-        <li class="list-group list text-medium cursor-pointer text-center text-md-start">
+        <li class="list-group list text-medium cursor-pointer text-center text-md-start" {{ $title === 'Surat Peringatan' ? 'list-active' : '' }}>
             <a href="{{ route('sp.index') }}" class="a-icon d-none d-md-block py-2 px-3"><i class="fa-solid fa-file-circle-exclamation me-3"></i>Surat Peringatan (SP)</a>
         </li>
         @endif

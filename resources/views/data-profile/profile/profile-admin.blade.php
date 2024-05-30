@@ -35,30 +35,32 @@
                                                   class="fa-solid fa-id-card me-2"></i>ID Admin</label>
                                           <p class=" mb-3 mt-2 p-2 w-100">301930193019</p>
                                       </div>
-                                      {{-- Nama --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-user-tag me-2"></i>Nama Lengkap</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Budi</p>
-                                      </div>
                                       {{-- Email --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-envelope me-2"></i>Email</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">budi12@gmail.com</p>
-                                      </div>
-                                      {{-- Alamat --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-location-dot me-2"></i>Alamat</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Jl. Prabu Siliwangi</p>
-                                      </div>
-                                      {{-- jk --}}
-                                      <div class="form-group mb-4">
-                                          <label for="nama" class="fw-semibold"><i
-                                                  class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
-                                          <p class=" mb-3 mt-2 p-2 w-100">Laki-Laki</p>
-                                      </div>
+                                    <div class="form-group mb-4">
+                                        <label for="nama" class="fw-semibold"><i
+                                                class="fa-solid fa-envelope me-2"></i>Email</label>
+                                        <p class=" mb-3 mt-2 p-2 w-100">budi12@gmail.com</p>
+                                    </div>
+                                    {{-- jk --}}
+                                    <div class="form-group mb-4">
+                                        <label for="nama" class="fw-semibold"><i
+                                                class="fa-solid fa-venus-mars me-2"></i>Jenis Kelamin</label>
+                                        <p class=" mb-3 mt-2 p-2 w-100">Laki-Laki</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    {{-- Nama --}}
+                                    <div class="form-group mb-4">
+                                        <label for="nama" class="fw-semibold"><i
+                                                class="fa-solid fa-user-tag me-2"></i>Nama Lengkap</label>
+                                        <p class=" mb-3 mt-2 p-2 w-100">Budi</p>
+                                    </div>
+                                    {{-- Alamat --}}
+                                    <div class="form-group mb-4">
+                                        <label for="nama" class="fw-semibold"><i
+                                                class="fa-solid fa-location-dot me-2"></i>Alamat</label>
+                                        <p class=" mb-3 mt-2 p-2 w-100">Jl. Prabu Siliwangi</p>
+                                    </div>
                                   </div>
                               </div>
                           </div>
